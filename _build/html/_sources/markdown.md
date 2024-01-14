@@ -33,12 +33,11 @@ It will be rendered in a special box when you build your book.
 
 Here is an inline directive to refer to a document: {doc}`markdown-notebooks`.
 
-
 ## Citations
 
 You can also cite references that are stored in a `bibtex` file. For example,
 the following syntax: `` {cite}`holdgraf_evidence_2014` `` will render like
-this: {cite}`holdgraf_evidence_2014`.
+this:
 
 Moreover, you can insert a bibliography into your page with this syntax:
 The `{bibliography}` directive must be used for all the `{cite}` roles to
@@ -48,7 +47,15 @@ then the bibliography is inserted with:
 
 ## We can use maths
 
+Let's try to use some maths $\N$
+
+$$
+\bmat{cc} 1 & 1 \\ 2 & 2 \emat
+$$
+
 ## We can use iframes
+
+Let's use some iframes now.
 
 ### This is a MathBox applet
 
@@ -56,39 +63,7 @@ then the bibliography is inserted with:
 
 ### This is a MathCell applet
 
-
-<div class="mathcell" style="width:100%;height:500px;">
-<script>
-var parent = document.currentScript.parentNode;
-var id = generateId();
-parent.id = id;
-MathCell(id, []);
-parent.update = function (id) {
-function z(x, y) { return [x, y, x * x / (x * x + y * y)]; }
-var s = parametric(z, [-1, 1, 300], [-1, 1, 300],
-{ colormap: (x, y) => colorFromHue((x * x / (x * x + y * y)) * 0.7) });
-var data = [s];
-var config = {
-type: 'threejs',
-viewpoint: [1, 0.8, 0.9],
-axesLabels: true,
-aspectRatio: [1, 1, 1],
-xMin: -1,
-xMax: 1,
-yMin: -1,
-yMax: 1,
-zMin: -0.5,
-zMax: 1.5,
-};
-evaluate(id, data, config);
-}
-parent.update(id);
-</script>
-</div>
-
-<!-- MathCell applets & MathJax -->
-<script src="https://www.dynamicmath.xyz/2024/template/js/math.js"></script>
-<script src="https://www.dynamicmath.xyz/2024/template/js/mathcell.js"></script>
+<iframe scrolling="no" style="border:0px;" src="https://www.dynamicmath.xyz/sketches/mathcell/eversion/" width="500px" height="500px"></iframe>
 
 ### This a GeoGebra applet
 
@@ -98,10 +73,12 @@ parent.update(id);
 
 ### This is an example with p5js
 
-<iframe style="border:0px;" src="https://www.dynamicmath.xyz/sketches/tesseract/" width="100%" height="450px"
+<iframe style="border:0px;" src="https://www.dynamicmath.xyz/sketches/tesseract/" width="500px" height="500px"
 scrolling="no"></iframe>
 
 ## These are images 
+
+Try to add some images.
 
 ### This a PNG
 
@@ -113,7 +90,6 @@ alt="fractal tree">
 <img
 src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJDbwRHyvFdQLTSeFQGv8Fu7vh2m-ah4JCwoP9oNtLHwpPlOgww50HOu-DIAIryl-8357glsTyawl84kdHIs4p8WkiO3wyycbrGzH8NPtJND0RaoIwhp5p_XNL0F2IQvZjYW1yR2AEaK5indISRPWFkKJoMtAUnGApPxCH3HCkZC-zOrsG14dmZxrUXXfH/w1152/ggb-snow.gif"
 style="width:70%" alt="Snow">
-
 
 ## Learn more
 

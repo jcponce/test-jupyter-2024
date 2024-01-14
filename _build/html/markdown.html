@@ -62,7 +62,10 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'markdown';</script>
+    <link rel="shortcut icon" href="_static/infinity16.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Content with notebooks" href="notebooks.html" />
@@ -161,21 +164,13 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="_static/my-logo.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/my-logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
-                </a>
-            </li>
-        </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Markdown Files</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
@@ -234,7 +229,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/jcponce/test-jupyter-2024" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -251,7 +246,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fmarkdown.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/jcponce/test-jupyter-2024/issues/new?title=Issue%20on%20page%20%2Fmarkdown.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -437,7 +432,7 @@ that is being called.</p>
 <h2>Citations<a class="headerlink" href="#citations" title="Permalink to this heading">#</a></h2>
 <p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
 the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
-this: <span id="id1">[]</span>.</p>
+this:</p>
 <p>Moreover, you can insert a bibliography into your page with this syntax:
 The <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code> directive must be used for all the <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> roles to
 render properly.
@@ -446,46 +441,22 @@ then the bibliography is inserted with:</p>
 </section>
 <section id="we-can-use-maths">
 <h2>We can use maths<a class="headerlink" href="#we-can-use-maths" title="Permalink to this heading">#</a></h2>
+<p>Let’s try to use some maths <span class="math notranslate nohighlight">\(\N\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\bmat{cc} 1 &amp; 1 \\ 2 &amp; 2 \emat
+\end{split}\]</div>
 </section>
 <section id="we-can-use-iframes">
 <h2>We can use iframes<a class="headerlink" href="#we-can-use-iframes" title="Permalink to this heading">#</a></h2>
+<p>Let’s use some iframes now.</p>
 <section id="this-is-a-mathbox-applet">
 <h3>This is a MathBox applet<a class="headerlink" href="#this-is-a-mathbox-applet" title="Permalink to this heading">#</a></h3>
 <iframe scrolling="no" style="border:0px;" src="https://topologia-general.github.io/sketches/hopf/" width="100%" height="380px"></iframe>
 </section>
 <section id="this-is-a-mathcell-applet">
 <h3>This is a MathCell applet<a class="headerlink" href="#this-is-a-mathcell-applet" title="Permalink to this heading">#</a></h3>
-<div class="mathcell" style="width:100%;height:500px;">
-<script>
-var parent = document.currentScript.parentNode;
-var id = generateId();
-parent.id = id;
-MathCell(id, []);
-parent.update = function (id) {
-function z(x, y) { return [x, y, x * x / (x * x + y * y)]; }
-var s = parametric(z, [-1, 1, 300], [-1, 1, 300],
-{ colormap: (x, y) => colorFromHue((x * x / (x * x + y * y)) * 0.7) });
-var data = [s];
-var config = {
-type: 'threejs',
-viewpoint: [1, 0.8, 0.9],
-axesLabels: true,
-aspectRatio: [1, 1, 1],
-xMin: -1,
-xMax: 1,
-yMin: -1,
-yMax: 1,
-zMin: -0.5,
-zMax: 1.5,
-};
-evaluate(id, data, config);
-}
-parent.update(id);
-</script>
-</div>
-<!-- MathCell applets & MathJax -->
-<script src="https://www.dynamicmath.xyz/2024/template/js/math.js"></script>
-<script src="https://www.dynamicmath.xyz/2024/template/js/mathcell.js"></script>
+<iframe scrolling="no" style="border:0px;" src="https://www.dynamicmath.xyz/sketches/mathcell/eversion/" width="500px" height="500px"></iframe>
 </section>
 <section id="this-a-geogebra-applet">
 <h3>This a GeoGebra applet<a class="headerlink" href="#this-a-geogebra-applet" title="Permalink to this heading">#</a></h3>
@@ -493,26 +464,15 @@ parent.update(id);
         src="https://www.geogebra.org/material/iframe/id/dabkhkqr/width/712/height/404/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/false/ctl/false"
         width="100%" height="404px" style="border:0px;"> </iframe>
 </section>
-<section id="this-a-geogebra-applet">
-  <h3>This a GeoGebra applet<a class="headerlink" href="#this-a-geogebra-applet" title="Permalink to this heading">#</a></h3>
-  <iframe scrolling="no" title="Slope field explorer" allowfullscreen=""
-          src="https://www.geogebra.org/material/iframe/id/dabkhkqr/width/712/height/404/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/false/ctl/false"
-          width="100%" height="404px" style="border:0px;"> </iframe>
-  </section>
-  <section id="this-a-geogebra-applet">
-    <h3>This a GeoGebra applet<a class="headerlink" href="#this-a-geogebra-applet" title="Permalink to this heading">#</a></h3>
-    <iframe scrolling="no" title="Slope field explorer" allowfullscreen=""
-            src="https://www.geogebra.org/material/iframe/id/dabkhkqr/width/712/height/404/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/false/ctl/false"
-            width="100%" height="404px" style="border:0px;"> </iframe>
-    </section>
 <section id="this-is-an-example-with-p5js">
 <h3>This is an example with p5js<a class="headerlink" href="#this-is-an-example-with-p5js" title="Permalink to this heading">#</a></h3>
-<iframe style="border:0px;" src="https://www.dynamicmath.xyz/sketches/tesseract/" width="100%" height="450px"
+<iframe style="border:0px;" src="https://www.dynamicmath.xyz/sketches/tesseract/" width="500px" height="500px"
 scrolling="no"></iframe>
 </section>
 </section>
 <section id="these-are-images">
 <h2>These are images<a class="headerlink" href="#these-are-images" title="Permalink to this heading">#</a></h2>
+<p>Try to add some images.</p>
 <section id="this-a-png">
 <h3>This a PNG<a class="headerlink" href="#this-a-png" title="Permalink to this heading">#</a></h3>
 <p><img alt="fractal tree" src="https://www.geogebra.org/resource/fkwhfwez/uieZ2zy9C1R5i9IX/material-fkwhfwez.png" /></p>

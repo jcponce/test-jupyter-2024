@@ -3,17 +3,33 @@
 
 title: My sample book
 author: The Jupyter Book Community
-logo: logo.png
+logo: images/my-logo.png
+description: >- # this means to ignore newlines until "baseurl:"
+  This is an example book built with Jupyter Books.
+only_build_toc_files: true
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
   execute_notebooks: force
+  stderr_output: "remove"
+  allow_errors: true
+  timeout: 120
 
-# Define the name of the latex output file for PDF builds
-latex:
-  latex_documents:
-    targetname: book.tex
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  favicon: images/infinity16.png
+  home_page_in_navbar: false
+  use_edit_page_button: false
+  use_repository_button: true
+  use_issues_button: true
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/jcponce/test-jupyter-2024  # Online location of your book
+  path_to_book: docs  # Optional path to your book, relative to the repository root
+  branch: master  # Which branch of the repository should be used when creating links (optional)
 
 parse:
   myst_enable_extensions:  # default extensions to enable in the myst parser. See https://myst-parser.readthedocs.io/en/latest/using/syntax-optional.html
@@ -21,38 +37,44 @@ parse:
     - colon_fence
     - deflist
     - dollarmath
-    # - html_admonition
+    - html_admonition
     - html_image
     - linkify
-    # - replacements
-    # - smartquotes
+    - replacements
+    - smartquotes
     - substitution
     - tasklist
   myst_url_schemes: [mailto, http, https] # URI schemes that will be recognised as external URLs in Markdown links
   myst_dmath_double_inline: true  # Allow display math ($$) within an inline context
 
+# Define the name of the latex output file for PDF builds
+latex:
+  latex_engine: xelatex
+  latex_documents:
+    targetname: book.tex
+
 # Add a bibtex file so that we can create citations
 bibtex_bibfiles:
   - references.bib
 
-# Launch button settings
-launch_buttons:
-  notebook_interface: classic
-  binderhub_url: ""
-  jupyterhub_url: ""
-  thebe: false
-  colab_url: ""
-
-# Information about where the book exists on the web
-repository:
-  url: https://github.com/executablebooks/jupyter-book  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
-  branch: master  # Which branch of the repository should be used when creating links (optional)
-
-# Add GitHub buttons to your book
-# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
-html:
-  use_issues_button: true
-  use_repository_button: true
-
-
+sphinx:
+  config:
+    bibtex_reference_style: author_year  # or label, super, \supercite
+    #html_js_files: [ ['https://www.dynamicmath.xyz/2024/template/js/math.js', {'defer': 'defer', 'data-domain': 'www.dynamicmath.xyz'}], ['https://www.dynamicmath.xyz/2024/template/js/mathcell.js', {'defer': 'defer', 'data-domain': 'www.dynamicmath.xyz'}]]
+    language: en
+    latex_elements:
+        preamble: |
+          \newcommand\N{\mathbb{N}}
+          \newcommand\floor[1]{\lfloor#1\rfloor}
+          \newcommand{\bmat}{\left[\begin{array}}
+          \newcommand{\emat}{\end{array}\right]}
+    # TODO: #917 this path will be the default in sphinx v4
+    # mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    # However, it is incompatible with the mathjax config below for macros
+    mathjax3_config:
+      tex:
+        macros:
+          "N": "\\mathbb{N}"
+          "floor": ["\\lfloor#1\\rfloor", 1]
+          "bmat": ["\\left[\\begin{array}"]
+          "emat": ["\\end{array}\\right]"]
