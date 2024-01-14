@@ -31,7 +31,7 @@ Here is a note
 
 It will be rendered in a special box when you build your book.
 
-Here is an inline directive to refer to a document: {doc}`markdown-notebooks`.
+Here is an inline directive to refer to a document:
 
 ## Citations
 
@@ -50,7 +50,7 @@ then the bibliography is inserted with:
 Let's try to use some maths $\N$
 
 $$
-\bmat{cc} 1 & 1 \\ 2 & 2 \emat
+\bmat{cc} 1 & 1 \\ 2 & 2 \emat{}
 $$
 
 ## We can use iframes
@@ -59,19 +59,27 @@ Let's use some iframes now.
 
 ### This is a MathBox applet
 
+An example:
+
 <iframe scrolling="no" style="border:0px;" src="https://topologia-general.github.io/sketches/hopf/" width="100%" height="380px"></iframe>
 
 ### This is a MathCell applet
 
+An example:
+
 <iframe scrolling="no" style="border:0px;" src="https://www.dynamicmath.xyz/sketches/mathcell/eversion/" width="500px" height="500px"></iframe>
 
 ### This a GeoGebra applet
+
+An example:
 
 <iframe scrolling="no" title="Slope field explorer" allowfullscreen=""
         src="https://www.geogebra.org/material/iframe/id/dabkhkqr/width/712/height/404/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/false/ctl/false"
         width="100%" height="404px" style="border:0px;"> </iframe>
 
 ### This is an example with p5js
+
+An example:
 
 <iframe style="border:0px;" src="https://www.dynamicmath.xyz/sketches/tesseract/" width="500px" height="500px"
 scrolling="no"></iframe>
@@ -82,10 +90,14 @@ Try to add some images.
 
 ### This a PNG
 
+An example:
+
 <img src="https://www.geogebra.org/resource/fkwhfwez/uieZ2zy9C1R5i9IX/material-fkwhfwez.png" style="width:70%"
 alt="fractal tree">
 
 ### This is a GIF
+
+An example:
 
 <img
 src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJDbwRHyvFdQLTSeFQGv8Fu7vh2m-ah4JCwoP9oNtLHwpPlOgww50HOu-DIAIryl-8357glsTyawl84kdHIs4p8WkiO3wyycbrGzH8NPtJND0RaoIwhp5p_XNL0F2IQvZjYW1yR2AEaK5indISRPWFkKJoMtAUnGApPxCH3HCkZC-zOrsG14dmZxrUXXfH/w1152/ggb-snow.gif"
@@ -95,6 +107,3 @@ style="width:70%" alt="Snow">
 
 This is just a simple starter to get you started.
 You can learn a lot more at [jupyterbook.org](https://jupyterbook.org).
-
-```{tableofcontents}
-```

@@ -35,6 +35,7 @@
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystyle.css" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -62,14 +63,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script>window.MathJax = {"tex": {"macros": {"N": "\\mathbb{N}", "R": "\\mathbb{R}", "ra": "\\rightarrow", "floor": ["\\lfloor#1\\rfloor", 1], "bmat": ["\\left[\\begin{array}"], "emat": ["\\end{array}\\right]"]}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'markdown';</script>
     <link rel="shortcut icon" href="_static/infinity16.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Content with notebooks" href="notebooks.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="intro.html" />
+    <link rel="prev" title="The Real Numbers" href="chapters/real-numbers.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -164,17 +164,20 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="_static/my-logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/my-logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="_static/my-logo-w.png" class="logo__image only-light" alt="My sample book - Home"/>
+    <script>document.write(`<img src="_static/my-logo-w.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Contents</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="chapters/real-numbers.html">The Real Numbers</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Templates</span></p>
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Content with notebooks</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
 </ul>
 
     </div>
@@ -426,7 +429,7 @@ that is being called.</p>
 <p>Here is a note</p>
 </div>
 <p>It will be rendered in a special box when you build your book.</p>
-<p>Here is an inline directive to refer to a document: <a class="reference internal" href="markdown-notebooks.html"><span class="doc">Notebooks with MyST Markdown</span></a>.</p>
+<p>Here is an inline directive to refer to a document:</p>
 </section>
 <section id="citations">
 <h2>Citations<a class="headerlink" href="#citations" title="Permalink to this heading">#</a></h2>
@@ -444,7 +447,7 @@ then the bibliography is inserted with:</p>
 <p>Let’s try to use some maths <span class="math notranslate nohighlight">\(\N\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\bmat{cc} 1 &amp; 1 \\ 2 &amp; 2 \emat
+\bmat{cc} 1 &amp; 1 \\ 2 &amp; 2 \emat{}
 \end{split}\]</div>
 </section>
 <section id="we-can-use-iframes">
@@ -452,20 +455,24 @@ then the bibliography is inserted with:</p>
 <p>Let’s use some iframes now.</p>
 <section id="this-is-a-mathbox-applet">
 <h3>This is a MathBox applet<a class="headerlink" href="#this-is-a-mathbox-applet" title="Permalink to this heading">#</a></h3>
+<p>An example:</p>
 <iframe scrolling="no" style="border:0px;" src="https://topologia-general.github.io/sketches/hopf/" width="100%" height="380px"></iframe>
 </section>
 <section id="this-is-a-mathcell-applet">
 <h3>This is a MathCell applet<a class="headerlink" href="#this-is-a-mathcell-applet" title="Permalink to this heading">#</a></h3>
+<p>An example:</p>
 <iframe scrolling="no" style="border:0px;" src="https://www.dynamicmath.xyz/sketches/mathcell/eversion/" width="500px" height="500px"></iframe>
 </section>
 <section id="this-a-geogebra-applet">
 <h3>This a GeoGebra applet<a class="headerlink" href="#this-a-geogebra-applet" title="Permalink to this heading">#</a></h3>
+<p>An example:</p>
 <iframe scrolling="no" title="Slope field explorer" allowfullscreen=""
         src="https://www.geogebra.org/material/iframe/id/dabkhkqr/width/712/height/404/border/888888/sfsb/true/smb/false/stb/false/stbh/false/ai/false/asb/false/sri/true/rc/false/ld/false/sdz/false/ctl/false"
         width="100%" height="404px" style="border:0px;"> </iframe>
 </section>
 <section id="this-is-an-example-with-p5js">
 <h3>This is an example with p5js<a class="headerlink" href="#this-is-an-example-with-p5js" title="Permalink to this heading">#</a></h3>
+<p>An example:</p>
 <iframe style="border:0px;" src="https://www.dynamicmath.xyz/sketches/tesseract/" width="500px" height="500px"
 scrolling="no"></iframe>
 </section>
@@ -475,10 +482,12 @@ scrolling="no"></iframe>
 <p>Try to add some images.</p>
 <section id="this-a-png">
 <h3>This a PNG<a class="headerlink" href="#this-a-png" title="Permalink to this heading">#</a></h3>
+<p>An example:</p>
 <p><img alt="fractal tree" src="https://www.geogebra.org/resource/fkwhfwez/uieZ2zy9C1R5i9IX/material-fkwhfwez.png" /></p>
 </section>
 <section id="this-is-a-gif">
 <h3>This is a GIF<a class="headerlink" href="#this-is-a-gif" title="Permalink to this heading">#</a></h3>
+<p>An example:</p>
 <p><img alt="Snow" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgJDbwRHyvFdQLTSeFQGv8Fu7vh2m-ah4JCwoP9oNtLHwpPlOgww50HOu-DIAIryl-8357glsTyawl84kdHIs4p8WkiO3wyycbrGzH8NPtJND0RaoIwhp5p_XNL0F2IQvZjYW1yR2AEaK5indISRPWFkKJoMtAUnGApPxCH3HCkZC-zOrsG14dmZxrUXXfH/w1152/ggb-snow.gif" /></p>
 </section>
 </section>
@@ -520,22 +529,13 @@ You can learn a lot more at <a class="reference external" href="https://jupyterb
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="chapters/real-numbers.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Welcome to your Jupyter Book</p>
+        <p class="prev-next-title">The Real Numbers</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="notebooks.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Content with notebooks</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -607,6 +607,12 @@ By The Jupyter Book Community
   
   <div class="footer-item">
     
+<div class="extra_footer">
+  <div>
+    Powered by <a href="https://jupyterbook.org/">Jupyter Books</a>
+</div>
+
+</div>
   </div>
   
 </div>
